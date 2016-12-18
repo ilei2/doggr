@@ -1,0 +1,87 @@
+#title{
+  font-family: 'Rancho', sans-serif;
+  font-size: 76px;
+}
+#preferences{
+  font-family: 'Rancho', sans-serif;
+  font-size: 48px;
+}
+#subtitle{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+}
+
+h1	{
+  font-size: 50px;
+}
+
+h2{
+  font-family: "Rancho", sans-serif;
+  font-size: 36px;
+}
+
+h3{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+}
+
+p{
+  font-size: 14px;
+}
+
+body	{
+  background:url("images/blue.jpg") bottom right no-repeat;
+  background-attachment:fixed;
+  background-size:100% 100%;
+  font-size: 16px;
+  font-family: 'Merriweather', sans-serif;
+}
+
+a:link	{
+  color:black;
+}
+a:hover {
+  color:#666;
+}
+a:visited {
+  color:black;
+}
+
+#hero1{
+ background:url(http://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+#hero2{background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/21555/Melissani-cave-natural.jpg);
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+.hero, .content{
+  text-align:center; 
+  position:relative;
+  width: 100%;
+}
+
+.inner{
+  min-height:600px;
+  position: relative;
+}
+
+.hero .inner{
+  background: rgba(0,0,0,0.7) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAD0lEQVQIW2NkQABjRmQOAAM+AGkQsDBSAAAAAElFTkSuQmCC) repeat;}
+
+
+.copy{
+  position:absolute; 
+  top:50%; 
+  height:10em; 
+  margin-top:-5em; 
+  width:100%;
+}
+
+.hero h1, .hero p{ 
+  color:#fff;
+
+}
