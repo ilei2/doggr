@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    left: 35px;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 8px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+
+<link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+<body>
+<center>
+<div id="title">
+Welcome to Doggr!
+</div><br>
+<div id="subtitle">
+<b>Our goal is to match you with the type of dog you are most interested in
+<br>and to show you dogs in Illinois that are available for adoption!
+</b></div>
+<br>
+Please start by giving us your preferences. 
+<br>For more information on each category, hover over the text.
+<br><br><br>
+<form action="connect.php" method="post">
+ Email: <input type="text" name="Email" value="Email"><br>
+
+ <div class="dropdown"><span>Child Friendly: </span>
+ <div class="dropdown-content">
+1: Less comfortable around children<br>5: Comfortable with children
+ </div> </div>
+ <input type="range" name="Child" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Exercise Needs: </span>
+ <div class="dropdown-content">
+1: Does not need regular exercise<br>5: Needs regular exercise
+ </div></div>
+ <input type="range" name="Exercise" min="1" max="5" value="5"><br>
+
+ <div class="dropdown"><span>Adaptability: </span>
+ <div class="dropdown-content">
+1: Does not easily adjust to new environments<br>5: Easily adjusts to new environments
+ </div></div>
+ <input type="range" name="Adaptability" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Apartment Friendly: </span>
+ <div class="dropdown-content">
+1: Not well suited for an apartment<br>5: Well suited for an apartment
+ </div></div> <input type="range" name="Apt" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Grooming Needs: </span>
+ <div class="dropdown-content">
+1: Does not need grooming often<br>5: Needs grooming often
+ </div></div>
+ <input type="range" name="Grooming" min="1" max="5" value="5"><br>
+
+ Size:<select id="Weight" name="Weight" value="Weight">
+    <option value="Size" selected>Size</option>
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+  </select><br></span>
+ Filter By: <select id="filter" name="filter" value="All">
+    <option value="All" selected>All</option>
+    <option value="Child">Child Friendliness</option>
+    <option value="Exercise">Exercise Needs</option>
+    <option value="Adapt">Adaptability</option>
+    <option value="Apt">Apt Friendliness</option>
+    <option value="Groom">Grooming Needs</option>
+  </select><br>
+
+<input type="submit" name="Wiki" value="Wiki">
+</form>
+
+<br><br>
+<h5>
+<a href="/index2.html">Skip This Step</a>
+</h5>
+
+</center>
+</body>
+</html>
+
