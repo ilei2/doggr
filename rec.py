@@ -5,7 +5,8 @@ from sys import stdin
 
 import googlemaps
 from datetime import datetime
-
+print("entering rec.py")
+"""
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
 str2 = ".rescueme.org/Illinois"
@@ -16,9 +17,6 @@ dog = dog.replace("-", "")
 link = str1+dog+str2
 #print(link)
 
-print("end of rec.py")
-
-"""
 f = requests.get(link)
 #t = f.text.encode('ascii', 'ignore').decode('ascii')
 t = f.text.encode('utf-8').decode('ascii', 'ignore')
