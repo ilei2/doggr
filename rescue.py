@@ -1,12 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
-print("Entering rescue.py program.")
-#import sys
-
+import sys
+from sys import stdin
+print("Entering rescue.py program [sys, stdin]")
 #from PIL import Image
 #import Image
-
-#from sys import stdin
 
 """
 print "<body bgcolor=\"#EDE1D1\">"
