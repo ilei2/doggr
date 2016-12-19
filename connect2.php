@@ -18,7 +18,8 @@ if (!$conn) {
 */
 
 
-$url = getenv('mysql://ci2fcjbx9tpzqn4y:kozr5qksyy4oy3wm@o61qijqeuqnj9chh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/obj143qd1hh6c964');
+#$url = getenv('mysql://ci2fcjbx9tpzqn4y:kozr5qksyy4oy3wm@o61qijqeuqnj9chh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/obj143qd1hh6c964');
+$url = getenv('JAWSDB_URL');
 $dbparts = parse_url($url);
 
 $hostname = $dbparts['host'];
