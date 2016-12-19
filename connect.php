@@ -121,6 +121,11 @@ if ($conn){
   }								    
 											        $q .= ";";
   echo "<br>{$q}";
+  $result = $conn->query($q);
+  while($row = $result->fetch_assoc()){
+    echo $row['Name'] . '<br>';
+  }
+
 
   $conn->close();
 }
