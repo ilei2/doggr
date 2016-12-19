@@ -2,17 +2,16 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 from sys import stdin
-import requests.packages.urllib3
-requests.packages.urllib3.disable_warnings()
-#import googlemaps
+#import requests.packages.urllib3
+#requests.packages.urllib3.disable_warnings()
+import googlemaps
 #gmaps = googlemaps.Client(key="AIzaSyAYnRlmFmbZ9G6XkQ4AXfu0qRYfoVwxjjc")
 
-
-from googlemaps import Client
-print("testing googlemaps in rec.py")
-#from datetime import datetime
+#from googlemaps import Client
+#print("testing googlemaps in rec.py")
+from datetime import datetime
 #print("entering rec.py")
-"""
+
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
 str2 = ".rescueme.org/Illinois"
@@ -105,7 +104,6 @@ for test in soup.find_all("td", valign="middle"):
 	    chunk.append(data)
 	    chunk2.append(split[0])
    	    break
-"""
 
 #Testing to see if Chunk contains all data of dogs
 """for i in range(0, len(chunk)):
@@ -114,7 +112,7 @@ for test in soup.find_all("td", valign="middle"):
   print("<br><br>")
 """
 
-"""
+
 if countDog == 0:
   dog = main.replace("-", " ") 
   string = "Unable to find any "+dog+"s up for adoption in Illinois :("
@@ -146,7 +144,7 @@ for city in list1:
   chunk[i] = t #Adds the location for each shelter dog
   i += 1
 
-gmaps = googlemaps.Client(key="AIzaSyAYnRlmFmbZ9G6XkQ4AXfu0qRYfoVwxjjc")
+gmaps = googlemaps.Client(key="AIzaSyBbhiMWtMlyXmQfnQWU-f3qFMNIJ1zzHAY")
 #destination = ["Champaign, United States"]
 
 array = []
@@ -179,7 +177,6 @@ for i in range(0, len(origin)):
 
 #print(matrix["rows"][1]["elements"][0]["distance"]["text"])
 #print(matrix["rows"][2]["elements"][0]["distance"]["text"])
-"""
 
 
 """for place in list1:
