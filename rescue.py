@@ -123,11 +123,11 @@ for i in range(12):
 		final = final + str(part4[i]) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/2000px-5_stars.svg.png\" style=\"width:100px;height:30px;\">" + "<br>"
 
 if final != "":
-  print("<h2>Dog Statistics</h2>")
   for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
     for g in e.find_all("img"):
       dog_image = g["src"]
       print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
+  print("<br><br><h2>Dog Statistics</h2>")
   print(final)
 
 print "<br>"
