@@ -40,7 +40,20 @@ if ($conn){
   if(!$result = $conn->query($query)){
     die("Error running query.");
   }
-  echo "total results: " . $result->num_rows;
+  if ($result->num_rows > 0){
+    //UPDATE User Table
+    $up = "UPDATE `User` SET `Weight` = '{$Weight}', `Child` = '{$Child}', `Exercise` = '{$Exercise}', `Adapt` = '{$Adapt}', `Apt` = '{$Apt}', `Groom` = '{$Groom}' WHERE `Email` = '{$Email}';";
+    echo "{$up}";
+    $conn->query($up);
+  }
+  else{
+    //INSERT into User Table
+    $new = "INSERT INTO `User`(`Email`, `Weight`, `ID1`, `ID2`, `ID3`, `Child`, `Exercise`, `Adapt`, `Apt`, `Groom`) VALUES('{$Email}', '{$Weight}', '0', '0', '0', '{$Child}', '{$Exercise}', '{$Adapt}', '{$Apt}', '{$Groom}');";
+    echo "{$new}";
+    $conn->query($new);
+  }
+
+  $conn->close();
 }
 
 ?>
