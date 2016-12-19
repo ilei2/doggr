@@ -35,7 +35,7 @@ if ($conn)
 //echo "<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet'>";
 echo "<center><h2>Information about {$name}</h2></center><br>";
 echo "<center>";
-echo "String: " . $string;
+echo $string;
 echo "</center>";
 ?>
 

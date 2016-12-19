@@ -68,10 +68,27 @@ part4 = []
 part5 = []
 part6 = []
 
+#print(link2)
 s = requests.get(link2)
 r = s.text.encode('ascii', 'ignore').decode('ascii')
 soup = BeautifulSoup(r, "html.parser")
 
+for breed in soup.find_all("div", {"class" : "pw-breed-char"}):
+  for item in breed.find_all("li"):
+    label2 = str(item.text)
+    part4.append(label2.strip().replace("\r\n", ""))
+for a in soup.find_all("div", {"class" : "pw-breed-char"}):
+  for b in a.find_all("li"):
+    part5.append(b["class"])
+for c in part5:
+  c = c.replace("pw-char-dots pw-char-", "")
+  part6.append(c)
+"""  for d in c:
+    if d is not "pw-char-dots":
+      part6.append(str(d).replace("pw-char-", ""))
+"""
+
+"""
 for that in soup.find_all("div", class_="pw-breed-char"):
 	for item in that.find_all("li"):
 		label2 = str(item.text)
@@ -85,7 +102,13 @@ for c in part5:
 		#print d
 		if d != "pw-char-dots":
 			part6.append(str(d).replace("pw-char-", ""))
+
+print(part4)
+"""
+
 final = ""
+#print(part4)
+#print(part6)
 
 for i in range(12):
 	if(part6[i] == "1"):
@@ -104,9 +127,8 @@ if final != "":
   print(final)
 
 print "<br>"
-for e in soup.find_all("div", class_="pw-main-content-image"):
-	for g in e.find_all("img"):
-		dog_image = g["src"]
 
+for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
+  for g in e.find_all("img"):
+    dog_image = g["src"]
 print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
-
