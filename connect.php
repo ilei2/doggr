@@ -37,6 +37,10 @@ echo "starting computation";
 if ($conn){
   $query = "SELECT * FROM User WHERE Email = '{$Email}';";
   echo "{$query}";
+  if(!$result = $conn->query($query)){
+    die("Error running query.");
+  }
+  echo "total results: " . $result->num_rows;
 }
 
 ?>
