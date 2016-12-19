@@ -4,8 +4,9 @@ import sys
 from sys import stdin
 
 import googlemaps
-from datetime import datetime
-print("entering rec.py")
+print("testing googlemaps in rec.py")
+#from datetime import datetime
+#print("entering rec.py")
 """
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
