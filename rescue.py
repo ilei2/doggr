@@ -1,4 +1,4 @@
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 #import requests
 print("Entering rescue.py program.")
 #import sys
