@@ -123,8 +123,9 @@ if ($conn){
   echo "<br>{$q}";
   $result = $conn->query($q);
   $count = 0;
+  $data = "";
   while($row = $result->fetch_assoc()){
-    $data = "<center><h2>" . (string) ++$count . "</h2><br></center>";
+    $data .= "<center><h2>" . (string) ++$count . "</h2><br></center>";
     $data .= '<center><form action="rescue.php" method="POST">Breed Info: <input type="submit" name="Name" value="' . $row['Name'] . '"/></form></center><center><form action="action_page2.php" method="POST">Adopt? <input type="text" name="City" value="Enter City"><input type="submit" name="Name" value="'. $row['Name'] . '"/></form></center>';
     $data .= "<center><b>" . $row['Name'] . "</b><br>";
     $data .= "Weight: " . $row['Male_weight'] . "<br>";
