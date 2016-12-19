@@ -27,6 +27,9 @@ $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
 
-echo "{$hostname}";
-echo "end of connect2.php";
+$conn = mysqli_connect($mysql_host, $mysql_user, $password, $dbname);
+if (!$conn){
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "connection successful!";
 ?>
