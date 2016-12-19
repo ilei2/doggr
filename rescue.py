@@ -25,8 +25,6 @@ t = f.text.encode('ascii', 'ignore').decode('ascii')
 soup = BeautifulSoup(t, "html.parser")
 #soup = BeautifulSoup(t, "lxml")
 
-print("end of rescue.py")
-"""
 count = 0
 check = ""
 for test in soup.find_all("div", align="justify"): #font,face="arial"
@@ -65,7 +63,7 @@ str4 = ".aspx"
 doggie = sys.argv[1]
 doggie = doggie.replace(" ", "-")
 link2 = str3+doggie+str4
-
+"""
 part4 = []
 part5 = []
 part6 = []
