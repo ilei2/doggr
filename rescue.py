@@ -25,6 +25,14 @@ t = f.text.encode('ascii', 'ignore').decode('ascii')
 soup = BeautifulSoup(t, "html.parser")
 #soup = BeautifulSoup(t, "lxml")
 
+
+#Finds image of dog breed
+for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
+  for g in e.find_all("img"):
+      dog_image = g["src"]
+      print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
+
+
 count = 0
 check = ""
 for test in soup.find_all("div", align="justify"): #font,face="arial"
@@ -128,7 +136,10 @@ if final != "":
 
 print "<br>"
 
+
+"""
 for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
   for g in e.find_all("img"):
     dog_image = g["src"]
 print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
+"""
