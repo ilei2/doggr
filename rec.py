@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 from sys import stdin
-
+import requests.packages.urllib3
+requests.packages.urllib3.disable_warnings()
 #import googlemaps
 #gmaps = googlemaps.Client(key="AIzaSyAYnRlmFmbZ9G6XkQ4AXfu0qRYfoVwxjjc")
 
