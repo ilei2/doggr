@@ -24,6 +24,8 @@ f = requests.get(link)
 t = f.text.encode('ascii', 'ignore').decode('ascii')
 soup = BeautifulSoup(t, "html.parser")
 #soup = BeautifulSoup(t, "lxml")
+
+print("end of rescue.py")
 """
 count = 0
 check = ""
