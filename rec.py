@@ -3,15 +3,7 @@ import requests
 import sys
 from sys import stdin
 import os
-#import requests.packages.urllib3
-#requests.packages.urllib3.disable_warnings()
-import googlemaps
-#gmaps = googlemaps.Client(key="AIzaSyAYnRlmFmbZ9G6XkQ4AXfu0qRYfoVwxjjc")
-
-#from googlemaps import Client
-#print("testing googlemaps in rec.py")
 from datetime import datetime
-#print("entering rec.py")
 
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
@@ -21,7 +13,6 @@ dest = sys.argv[2] #gets 'destination'
 dog = main.lower().replace(" ", "")
 dog = dog.replace("-", "")
 link = str1+dog+str2
-#print(link)
 
 f = requests.get(link)
 #t = f.text.encode('ascii', 'ignore').decode('ascii')
@@ -87,31 +78,16 @@ for test in soup.find_all("td", valign="middle"):
 	    data = data + "<br><center>"+agetag+"</center>"
 	    arrName.append(nametag)
 	    data = data + "<br><center><b>ID:</b> "+dog+"_"+idtag+"</center>"
-            #data = data + '<br><center><form action="id.php" method="POST"><b>Get More Info:</b> <input type="submit" name="Name" value="'+dog+"_"+idtag+'"/></form></center>'
-	      #print("<br>")
-              #print("<center><b>ID:</b> "+dog+"_"+idtag+"</center>")
-	    #print('<center><form action="id.php" method="POST">Get More Info: <input type="submit" name="Name" value="'+dog+"_"+idtag+'"/></form></center>')
-	    #print('<center><form action="add.php" method="POST">Favorite: <input type="submit" name="Name" value="'++"_"+idtag+'"/></form></center>')
-	    #data = data + "<center>"+agetag+"</center><br>"
-	      #print("<br>")
-              #print("<center>"+agetag+"</center>")
-	      #print("<br>")
-	      #print("<center>"+split[0]+"</center")
 	    arrSummary.append(split[0])
-	    #data = data + "<center>" + split[0] + "</center>"
- 	      #print("<br><br>")
-	    #print(data)
-	    #print(split[0])
 	    chunk.append(data)
 	    chunk2.append(split[0])
-   	    break
+	    break
 
 #Testing to see if Chunk contains all data of dogs
-"""for i in range(0, len(chunk)):
+for i in range(0, len(chunk)):
   print(chunk[i])
   print(chunk2[i])
   print("<br><br>")
-"""
 
 
 if countDog == 0:
@@ -125,9 +101,8 @@ for a in soup.find_all("center"):
  	for x in a.find_all("font", size="3", color="000099"):
 		for c in x.find_all("b"):
 			list1.append(str(c).replace("<b>", "").replace("</b>", "").replace(", IL ", "").translate(None, '0123456789'))
-		#list1.append(str(c).strip().replace(", IL", "").translate(None, '0123456789'))
 
-
+"""
 #GOOGLE MAP API
 origin = []
 i = 0
@@ -145,6 +120,7 @@ for city in list1:
   chunk[i] = t #Adds the location for each shelter dog
   i += 1
 
+#gmaps = googlemaps.Client(key=API_KEY)
 gmaps = googlemaps.Client(key=os.environ['KEY'])
 #destination = ["Champaign, United States"]
 
@@ -159,6 +135,7 @@ sortedArray = []
 checkDist = []
 #print("array:<br>")
 #print(array)
+
 
 for i in range(0, len(origin)):
   string = min(array)
@@ -178,7 +155,7 @@ for i in range(0, len(origin)):
 
 #print(matrix["rows"][1]["elements"][0]["distance"]["text"])
 #print(matrix["rows"][2]["elements"][0]["distance"]["text"])
-
+"""
 
 """for place in list1:
 	list2.append(place.lower().replace(" ", "-") + "-il")
