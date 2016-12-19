@@ -8,7 +8,6 @@ $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
 
-echo "Testing connection in rescue.php";
 $conn = mysqli_connect($hostname, $username, $password, $database);
 if (!$conn){
   die("Connection failed: " . mysqli_connect_error());
@@ -36,7 +35,7 @@ if ($conn)
 //echo "<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet'>";
 echo "<center><h2>Information about {$name}</h2></center><br>";
 echo "<center>";
-echo $string;
+echo "String: " . $string;
 echo "</center>";
 ?>
 
