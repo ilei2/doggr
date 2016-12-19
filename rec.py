@@ -102,6 +102,19 @@ for a in soup.find_all("center"):
 		for c in x.find_all("b"):
 			list1.append(str(c).replace("<b>", "").replace("</b>", "").replace(", IL ", "").translate(None, '0123456789'))
 
+#print(list1)
+
+#Testing to see if Chunk contains all data of dogs
+for i in range(0, len(chunk)):
+  print(chunk[i])
+  loc = "<b>Location:</b> " + list1[i] + "<br>"
+  print(loc)
+  #print(list1[i])
+  print(chunk2[i])
+  print("<br><br>")
+
+
+
 """
 #GOOGLE MAP API
 origin = []
@@ -156,6 +169,8 @@ for i in range(0, len(origin)):
 #print(matrix["rows"][1]["elements"][0]["distance"]["text"])
 #print(matrix["rows"][2]["elements"][0]["distance"]["text"])
 """
+
+
 
 """for place in list1:
 	list2.append(place.lower().replace(" ", "-") + "-il")
