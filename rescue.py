@@ -2,11 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 from sys import stdin
-print("Entering rescue.py program [sys, stdin]")
 #from PIL import Image
 #import Image
 
-"""
+
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
 str2 = ".rescueme.org"
@@ -25,7 +24,7 @@ f = requests.get(link)
 t = f.text.encode('ascii', 'ignore').decode('ascii')
 soup = BeautifulSoup(t, "html.parser")
 #soup = BeautifulSoup(t, "lxml")
-
+"""
 count = 0
 check = ""
 for test in soup.find_all("div", align="justify"): #font,face="arial"
