@@ -53,9 +53,9 @@ for test in soup.find_all("div", align="justify"): #font,face="arial"
         flag = 0
 
 if len(check)==0:
-  print("Unable to find the dog you were looking for :(")
+  print("Unable to find further information of this dog breed :(")
   print("<br><br>")
-  print("<img src='https://imgflip.com/s/meme/Doge.jpg' width='400' height='400'>")
+  #print("<img src='https://imgflip.com/s/meme/Doge.jpg' width='400' height='400'>")
 
 print("<br><br>")
 str3 = "http://www.petwave.com/Dogs/Breeds/"
