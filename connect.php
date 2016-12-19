@@ -122,12 +122,54 @@ if ($conn){
 											        $q .= ";";
   echo "<br>{$q}";
   $result = $conn->query($q);
+  $count = 0;
   while($row = $result->fetch_assoc()){
-    echo $row['Name'] . '<br>';
+    $data = "<center><h2>" . (string) ++$count . "</h2><br></center>";
+    $data .= '<center><form action="rescue.php" method="POST">Breed Info: <input type="submit" name="Name" value="' . $row['Name'] . '"/></form></center><center><form action="action_page2.php" method="POST">Adopt? <input type="text" name="City" value="Enter City"><input type="submit" name="Name" value="'. $row['Name'] . '"/></form></center>';
+    $data .= "<center><b>" . $row['Name'] . "</b><br>";
+    $data .= "Weight: " . $row['Male_weight'] . "<br>";
+    $data .=  "Color: " . $row['Color'] . "<br>";
+    $data .=  "Life Span: " . $row['Age'] . "<br>";
+    $data .=  "Child-friendly: " . $row['Child'] . "<br>";
+    $data .=  "Exercise Needs: " . $row['Exercise'] . "<br>";
+    $data .=  "Adaptability: " . $row['Adapt'] . "<br>";
+    $data .=  "Grooming Needs: " . $row['Grooming'] . "<br>";
+    $data .=  "Apartment-friendly: " . $row['Apt'] . "<br>";
+    $data .=  "<br><br>";
   }
 
-
+  $data .= "</body></html>";
   $conn->close();
 }
+
+
+
+echo '<html><head><link rel="stylesheet" type="text/css" href="summary.css">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+</head><body><form action="connect.php" method="post">
+<center>Child Friendly: <input type="range" name="Child" min="1" max="5" value=' . $Child . '><br><br>
+Exercise Needs: <input type="range" name="Exercise" min="1" max="5" value=' . $Exercise . '><br><br>
+Adaptability: <input type="range" name="Adaptability" min="1" max="5" value=' . $Adaptability . '><br><br>
+<select id="Weight" name="Weight" value=' . $Weight . '>
+<option value="Weight" selected>Size</option>
+<option value="Small">Small</option>
+<option value="Medium">Medium</option>
+<option value="Large">Large</option>
+</select><br><br>
+Apartment Friendly: <input type="range" name="Apt" min="1" max="5" value=' . $Apt . '><br><br>
+Grooming Needs: <input type="range" name="Grooming" min="1" max="5" value=' . $Groom . '><br><br>
+Filter By: <select id="filter" name="filter" value="All">
+<option value="All" selected>All</option>
+<option value="Child">Child Friendliness</option>
+<option value="Exercise">Exercise Needs</option>
+<option value="Adapt">Adaptability</option>
+<option value="Apt">Apt Friendliness</option>
+<option value="Groom">Grooming Needs</option>
+</select>
+Filter: <input type="submit" name="Email" value=' . $Email . '>
+</form>
+</center></body></html>';
+echo "<br><center><h1>Dog Breed Ranking:</h1></center>";
+echo $data;
 
 ?>
