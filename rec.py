@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 from sys import stdin
+import os
 #import requests.packages.urllib3
 #requests.packages.urllib3.disable_warnings()
 import googlemaps
@@ -144,7 +145,7 @@ for city in list1:
   chunk[i] = t #Adds the location for each shelter dog
   i += 1
 
-gmaps = googlemaps.Client(key="AIzaSyBbhiMWtMlyXmQfnQWU-f3qFMNIJ1zzHAY")
+gmaps = googlemaps.Client(key=os.environ['KEY'])
 #destination = ["Champaign, United States"]
 
 array = []
