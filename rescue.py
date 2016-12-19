@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-#import requests
+import requests
 print("Entering rescue.py program.")
 #import sys
 
