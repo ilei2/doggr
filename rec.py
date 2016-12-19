@@ -3,7 +3,9 @@ import requests
 import sys
 from sys import stdin
 
-#import googlemaps
+import googlemaps
+gmaps = googlemaps.Client(key="AIzaSyAYnRlmFmbZ9G6XkQ4AXfu0qRYfoVwxjjc")
+
 print("testing googlemaps in rec.py")
 #from datetime import datetime
 #print("entering rec.py")
