@@ -3,7 +3,7 @@ import requests
 import sys
 from sys import stdin
 
-import googlemaps
+#import googlemaps
 print("testing googlemaps in rec.py")
 #from datetime import datetime
 #print("entering rec.py")
