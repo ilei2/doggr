@@ -14,7 +14,7 @@ dogTrivia = dog.replace("-", " ")
 dog = dog.lower()
 dog = dog.replace("-", "")
 link = str1+dog+str2
-print(link)
+#print(link)
 
 part1 = []
 part2 = []
@@ -63,7 +63,7 @@ str4 = ".aspx"
 doggie = sys.argv[1]
 doggie = doggie.replace(" ", "-")
 link2 = str3+doggie+str4
-"""
+
 part4 = []
 part5 = []
 part6 = []
@@ -109,4 +109,4 @@ for e in soup.find_all("div", class_="pw-main-content-image"):
 		dog_image = g["src"]
 
 print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
-"""
+
