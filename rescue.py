@@ -1,10 +1,14 @@
 from bs4 import BeautifulSoup
 import requests
-import sys
+print("requests")
+#import sys
+
 #from PIL import Image
 #import Image
-from sys import stdin
 
+#from sys import stdin
+
+"""
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
 str2 = ".rescueme.org"
@@ -14,7 +18,7 @@ dog = dog.lower()
 dog = dog.replace("-", "")
 link = str1+dog+str2
 print(link)
-"""
+
 part1 = []
 part2 = []
 part3 = []
