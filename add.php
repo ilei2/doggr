@@ -40,14 +40,14 @@ if ($conn)
   if (!$result = $conn->query($check)){
     die("Error running query.")
   }
-  if($result->num_rows > 0){
+  /*if($result->num_rows > 0){
     $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
     echo "Update query: " . $up;  
     echo "Added!";
   }
   else{
     echo "User Email not found, please try again.";
-  }
+  }*/
   $conn->close();
 
 ?>
