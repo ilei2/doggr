@@ -31,7 +31,8 @@ if ($conn){
     $Groom = row['Groom'];
     $D1 = '0';
     $D2 = '0';
-    echo $Size;
+    echo "Size is: {$Size}";
+    echo "Child is: {$Child}";
     break;
   }/*
     if ($Size == "Small"){
