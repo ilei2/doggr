@@ -16,7 +16,7 @@ if (!$conn){
   }
 
 if ($conn){
-  $getImage = "select Image FROM Dogs WHERE Name = '" . {$name} . "';"
+  $getImage = "select Image FROM Dogs WHERE Name = '" . {$name} . "';";
   $image = $conn->query($getImage);
   echo $image;
   $conn->close();
