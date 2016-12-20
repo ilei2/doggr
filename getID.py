@@ -8,15 +8,29 @@ from sys import stdin
 
 string = sys.argv[1] # dog name and id
 array = string.split(":")
+tag = array[1]
+if (tag[8] != "-"):
+  tag = tag[:6] + "-" + tag[6:]
+  tag = tag[:4] + "-" + tag[4:]
+  tag = tag[:2] + "-" + tag[2:]
 dog = array[0]
 dog = dog.lower()
 ID = array[1]
+#print("ID:")
+#print(ID)
+#print("newtag:")
+#print(tag)
+ID = tag
+
 str1 = "http://"
 str2 = ".rescueme.org/Illinois"
 
 print "<body bgcolor=\"#EDE1D1\">"
 link = str1 + str(dog)+ str2
-print(link)
+#print(link)
+
+redirect = str1 + str(dog) + str2 + "?" + tag
+#print(redirect)
 
 f = requests.get(link)
 #t = f.text.encode('ascii', 'ignore').decode('ascii')
@@ -81,6 +95,7 @@ for test in soup.find_all("td", valign="middle"):
 	      data = data + "<br><center>"+agetag+"</center>"
 	      arrName.append(nametag)
 	      data = data + "<br><center><b>ID:</b> "+dog+"_"+idtag+"<br><br></center>"
+	      data = data + "<br><center><b>Link:</b>" + redirect + "<br><br></center>"
 	      arrSummary.append(split[0])
 	      chunk.append(data)
 	      chunk2.append(split[0])
@@ -92,6 +107,7 @@ if idFound == 0:
   print("Unable to find the dog based on your ID :(")
 
 if countDog == 0:
-  dog = main.replace("-", " ") 
+  if ("-" in dog):
+    dog = dog.replace("-", " ") 
   string = "Unable to find any "+dog+"s up for adoption in Illinois :("
   print(string)
