@@ -1,10 +1,4 @@
 <?php
-/*$mysql_host = '127.0.0.1';
-$mysql_user = 'root';
-$mysql_password = 'kija';
-$dbname = 'test';
-$conn = mysql_connect($mysql_host, $mysql_user, $mysql_password, $dbname);
-*/
 $Email = $_POST["Email"];
 
 $url = getenv('JAWSDB_URL');
@@ -24,7 +18,8 @@ echo "<link rel='stylesheet' type='text/css' href='summary.css'>";
 
 if ($conn){
   echo "do join here"; 
-  $user = "SELECT * FROM User WHERE Email = '{$Email}'";
+  $user = "SELECT * FROM User WHERE Email = '{$Email}';";
+  echo $user;
   if(!$result = $conn->query($user)){
     die("Error running query.");
   }
@@ -79,9 +74,7 @@ if ($conn){
       $Groom = (string) $groom;
     }
     $q = "SELECT * FROM Dogs WHERE Male_weight >= {$D1} AND Male_weight <= {$D2} AND Child >= {$Child} AND Exercise <= {$Exercise} AND Adapt >= {$Adapt} AND Apt >= {$Apt} AND Grooming <= {$Groom}";
-    $q .= " ORDER BY Child DESC, Exercise DESC, Adapt DESC, Apt DESC, Grooming DESC";
-    $q .= ";";
-
+    $q .= " ORDER BY Child DESC, Exercise DESC, Adapt DESC, Apt DESC, Grooming DESC;";
     $result = $conn->query($q);
     $count = 0;
     $data = "";
@@ -99,13 +92,13 @@ if ($conn){
       $data .=  "Apartment-friendly: " . $row['Apt'] . "<br>";
       $data .=  "<br><br>";
     }
-
     break;
   }
   $conn->close();
 }
 
 echo $data;
+echo "</body></html>";
 //$data = "<html><body>";
 //$data .= "<link rel='stylesheet' type='text/css' href='summary.css'>";
 #echo $data;
