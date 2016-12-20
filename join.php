@@ -18,7 +18,7 @@ echo "<link rel='stylesheet' type='text/css' href='summary.css'>";
 
 if ($conn){ 
   $user = "SELECT * FROM User WHERE Email = '{$Email}';";
-  echo $user;
+  //echo $user;
   if(!$result = $conn->query($user)){
     die("Error running query.");
   }
@@ -31,8 +31,6 @@ if ($conn){
   $Groom = $row['Groom'];
   $D1 = '0';
   $D2 = '0';
-  //echo "Size is: {$Size}";
-  //echo "Child is: {$Child}";  
   
   if ($Size == "Small"){
     $D1 = '0';
@@ -77,7 +75,7 @@ if ($conn){
   }
   $q = "SELECT * FROM Dogs WHERE Male_weight >= {$D1} AND Male_weight <= {$D2} AND Child >= {$Child} AND Exercise <= {$Exercise} AND Adapt >= {$Adapt} AND Apt >= {$Apt} AND Grooming <= {$Groom}";
   $q .= " ORDER BY Child DESC, Exercise DESC, Adapt DESC, Apt DESC, Grooming DESC;";
-  echo $q;
+  //echo $q;
   $result = $conn->query($q);
   $count = 0;
   $data = "";
@@ -95,12 +93,11 @@ if ($conn){
     $data .=  "Apartment-friendly: " . $row['Apt'] . "<br>";
     $data .=  "<br><br>";
   }
-  //}
   $conn->close();
 }
 
-//echo $data;
-//echo "</body></html>";
+echo $data;
+echo "</body></html>";
 
 
 
