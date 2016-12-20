@@ -21,6 +21,17 @@ if ($conn){
   echo $getImage;
   $conn->close();
 }*/
+if ($conn){
+  $query = "SELECT * FROM Dogs WHERE Name = '{$name}';";
+    //echo "{$query}";
+   if(!$result = $conn->query($query)){
+     die("Error running query.");
+   }
+   while($row = $result->fetch_assoc()){
+   echo $row['Image'];
+   }
+   //echo $result;
+}
 
 
 //$name = $_POST["Name"];
