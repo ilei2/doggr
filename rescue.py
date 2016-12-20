@@ -11,7 +11,7 @@ dogTrivia = dog.replace("-", " ")
 dog = dog.lower()
 dog = dog.replace("-", "")
 link = str1+dog+str2
-print(link)
+#print(link)
 
 part1 = []
 part2 = []
@@ -80,32 +80,12 @@ for a in soup.find_all("div", {"class" : "pw-breed-char"}):
 for c in part5:
   c = c.replace("pw-char-dots pw-char-", "")
   part6.append(c)
-"""  for d in c:
-    if d is not "pw-char-dots":
-      part6.append(str(d).replace("pw-char-", ""))
-"""
 
-"""
-for that in soup.find_all("div", class_="pw-breed-char"):
-	for item in that.find_all("li"):
-		label2 = str(item.text)
-		part4.append(label2.strip().replace("\r\n", ""))
-for a in soup.find_all("div", class_="pw-breed-char"):
-	for b in a.find_all("li"):
-		part5.append(b["class"])
-#print part2
-for c in part5:
-	for d in c:
-		#print d
-		if d != "pw-char-dots":
-			part6.append(str(d).replace("pw-char-", ""))
-
-print(part4)
-"""
 
 final = ""
 #print(part4)
 #print(part6)
+
 if (len(part6) > 0):
   for i in range(12):
 	if(part6[i] == "1"):
@@ -137,9 +117,4 @@ if (len(final) > 0):
   print("<br><br><h2>Dog Statistics</h2>")
   print(final)
 print "<br>"
-
-
-
-
-
 
