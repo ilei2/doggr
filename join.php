@@ -22,7 +22,7 @@ if ($conn){
   /*if(!$result = $conn->query($user)){
     die("Error running query.");
   }*/
-  print("while loop")
+  //print("while loop")
   /*
   while($row = $result->fetch_assoc()){
     $Size = row['Weight'];
