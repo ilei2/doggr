@@ -22,13 +22,14 @@ if ($conn){
   if(!$result = $conn->query($user)){
     die("Error running query.");
   }
-  while($row = $result->fetch_assoc()){
-    $Size = row['Weight'];
-    $Child = row['Child'];
-    $Exercise = row['Exercise'];
-    $Adapt = row['Adapt'];
-    $Apt = row['Apt'];
-    $Groom = row['Groom'];
+  $row = $result->fetch_assoc();
+  //while($row = $result->fetch_assoc()){
+    $Size = $row['Weight'];
+    $Child = $row['Child'];
+    $Exercise = $row['Exercise'];
+    $Adapt = $row['Adapt'];
+    $Apt = $row['Apt'];
+    $Groom = $row['Groom'];
     $D1 = '0';
     $D2 = '0';
     echo "Size is: {$Size}";
@@ -99,7 +100,7 @@ if ($conn){
     break;
   }*/
   //$conn->close();
-}
+//}
 
 //echo $data;
 //echo "</body></html>";
