@@ -33,9 +33,9 @@ if (!$conn){
 }
 
 if ($conn)
-  $check = "SELECT * FROM `User` WHERE `Email` = '{$Email}';";
+  $check = "SELECT * FROM User WHERE Email = '{$Email}';";
   echo "Check query: " . $check;
-  $conn->query($check);
+  //$conn->query($check);
   //testing below:
   if (!$result = $conn->query($check)){
     die("Error running query.")
