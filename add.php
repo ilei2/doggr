@@ -3,8 +3,8 @@
 $one = $_POST["one"];
 $two = $_POST["two"];
 $three = $_POST["three"];
+$Email = $_POST["email"];
 /*
-$email = $_POST["email"];
 #echo $one;
 $mysql_host = '127.0.0.1';
 $mysql_user = 'root';
@@ -35,9 +35,18 @@ if (!$conn){
 if ($conn)
   $check = "SELECT * FROM `User` WHERE `Email` = '{$Email}'";
   echo "Check query: " . $check;
-  $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
-  echo "Update query: " . $up;  
-  echo "Added!";
+  $conn->query($check);
+  if (!result = $conn->query($query)){
+    die("Error running query.")
+  }
+  if($result->num_rows > 0){
+    $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
+    echo "Update query: " . $up;  
+    echo "Added!";
+  }
+  else{
+    echo "User Email not found, please try again.";
+  }
   $conn->close();
 
 ?>
