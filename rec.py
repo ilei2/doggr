@@ -82,13 +82,13 @@ for test in soup.find_all("td", valign="middle"):
 	    chunk.append(data)
 	    chunk2.append(split[0])
 	    break
-
+"""
 #Testing to see if Chunk contains all data of dogs
 for i in range(0, len(chunk)):
   print(chunk[i])
   print(chunk2[i])
   print("<br><br>")
-
+"""
 
 if countDog == 0:
   dog = main.replace("-", " ") 
@@ -100,19 +100,18 @@ list2 = []
 for a in soup.find_all("center"):
  	for x in a.find_all("font", size="3", color="000099"):
 		for c in x.find_all("b"):
-			list1.append(str(c).replace("<b>", "").replace("</b>", "").replace(", IL ", "").translate(None, '0123456789'))
-
-#print(list1)
+			#print(c)
+			list1.append(str(c).replace("<b>", "").replace("</b>", ""))
+			#list1.append(str(c).replace("<b>", "").replace("</b>", "").replace(", IL ", "").translate(None, '0123456789'))
 
 #Testing to see if Chunk contains all data of dogs
 for i in range(0, len(chunk)):
   print(chunk[i])
-  loc = "<b>Location:</b> " + str(list1[i]) + "<br>"
-  print(loc)
+  #loc = "<br><b>Location:</b> " + str(list1[i]) + "<br><br>"
+  #print(loc)
   print(list1[i])
   print(chunk2[i])
   print("<br><br>")
-
 
 
 """
