@@ -16,9 +16,9 @@ if (!$conn){
   }
 
 if ($conn){
-  $getImage = "select Image FROM Dogs WHERE Name = '" . {$name} . "';";
-  $image = $conn->query($getImage);
-  echo $image;
+  $getImage = "SELECT Image FROM Dogs WHERE Name = '" . {$name} . "';";
+  //$image = $conn->query($getImage);
+  echo $getImage;
   $conn->close();
 }
 
@@ -27,7 +27,7 @@ if ($conn){
 $Pname = str_replace(" ", "-", $name);
 
 if ($conn)
-  $string .= shell_exec("python rescue.py {$Pname} {$image}");
+  $string .= shell_exec("python rescue.py {$Pname}");
   $string .= "</body></html>";
 ?>
 
