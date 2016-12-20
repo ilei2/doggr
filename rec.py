@@ -109,9 +109,9 @@ for i in range(0, len(chunk)):
   print(chunk[i])
   #loc = "<br><b>Location:</b> " + str(list1[i]) + "<br><br>"
   #print(loc)
-  print("<center><b>City: </b>")
+  print("<br><center><b>City: </b>")
   print(list1[i])
-  print("</center><br><br>")
+  print("</center><br>")
   print(chunk2[i])
   print("<br><br>")
 
