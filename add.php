@@ -4,6 +4,7 @@ $two = $_POST["two"];
 $three = $_POST["three"];
 $Email = $_POST["email"];
 
+
 $url = getenv("JAWSDB_URL");
 $dbparts = parse_url($url);
 $hostname = $dbparts['host'];
@@ -27,7 +28,8 @@ if ($conn){
 
   if($result->num_rows > 0){
     $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
-    //echo "Update query: " . $up;  
+    //echo "Update: " . $up;
+    $conn->query($up);
     echo "<center>Added!</center>";
   }
 
