@@ -95,7 +95,7 @@ for test in soup.find_all("td", valign="middle"):
 	      data = data + "<br><center>"+agetag+"</center>"
 	      arrName.append(nametag)
 	      data = data + "<br><center><b>ID:</b> "+dog+"_"+idtag+"<br><br></center>"
-	      data = data + "<center><b>Link:</b><a href='" + redirect + "'>" + nametag + "</a><br><br></center>"
+	      data = data + "<center><b>Link:</b><a href='" + redirect + "'>" + namelabel + "</a><br><br></center>"
 	      arrSummary.append(split[0])
 	      chunk.append(data)
 	      chunk2.append(split[0])
