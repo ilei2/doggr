@@ -9,37 +9,31 @@ $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
 
 $name = $_POST["Name"];
+$Pname = str_replace(" ", "-", $name);
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 if (!$conn){
   die("Connection failed: " . mysqli_connect_error());
   }
-/*
-if ($conn){
-  $getImage = "SELECT Image FROM Dogs WHERE Name = '" . {$name} . "';";
-  //$image = $conn->query($getImage);
-  echo $getImage;
-  $conn->close();
-}*/
 if ($conn){
   $query = "SELECT * FROM Dogs WHERE Name = '{$name}';";
-    //echo "{$query}";
-   if(!$result = $conn->query($query)){
-     die("Error running query.");
-   }
-   while($row = $result->fetch_assoc()){
-   echo $row['Image'];
-   }
-   //echo $result;
+  if(!$result = $conn->query($query)){
+    die("Error running query.");
+  }
+  while($row = $result->fetch_assoc()){
+    $image = $row['Image'];
+  }
+
+  $string .= shell_exec("python rescue.py {$Pname} {$image}");
+  $string .= "</body></html>";
+  $conn->close();
 }
 
+//$Pname = str_replace(" ", "-", $name);
 
-//$name = $_POST["Name"];
-$Pname = str_replace(" ", "-", $name);
-
-if ($conn)
-  $string .= shell_exec("python rescue.py {$Pname}");
-  $string .= "</body></html>";
+//if ($conn)
+//  $string .= shell_exec("python rescue.py {$Pname}");
+//  $string .= "</body></html>";
 ?>
 
 

@@ -132,6 +132,8 @@ if final != "":
 if count == 0:
   #getImage = "select Image FROM Dogs WHERE Name = '" + dogTrivia + "';"
   print("retrieve image here")
+  img = sys.argv[2]
+  print(img)
   #QUERY IMAGE FROM DATABASE HERE
   
 
