@@ -36,7 +36,7 @@ if ($conn)
   $check = "SELECT * FROM `User` WHERE `Email` = '{$Email};'";
   echo "Check query: " . $check;
   //$conn->query($check);
-  if (!$result = $conn->query($check)){
+  /*if (!$result = $conn->query($check)){
     die("Error running query.")
   }
   if($result->num_rows > 0){
@@ -46,7 +46,7 @@ if ($conn)
   }
   else{
     echo "User Email not found, please try again.";
-  }
+  }*/
   $conn->close();
 
 ?>
