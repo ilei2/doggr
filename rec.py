@@ -107,9 +107,9 @@ for a in soup.find_all("center"):
 #Testing to see if Chunk contains all data of dogs
 for i in range(0, len(chunk)):
   print(chunk[i])
-  loc = "<b>Location:</b> " + list1[i] + "<br>"
+  loc = "<b>Location:</b> " + str(list1[i]) + "<br>"
   print(loc)
-  #print(list1[i])
+  print(list1[i])
   print(chunk2[i])
   print("<br><br>")
 
