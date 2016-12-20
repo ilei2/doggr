@@ -33,21 +33,20 @@ if (!$conn){
 }
 
 if ($conn)
-  //$check = "SELECT * FROM User WHERE Email = '{$Email}';";
   $query = "SELECT * FROM User WHERE Email = '{$Email}';";
   if(!$result = $conn->query($query)){
     die("Error running query.");
   }
 
   //testing below:
-  /*if($result->num_rows > 0){
+  if($result->num_rows > 0){
     $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
     echo "Update query: " . $up;  
     echo "Added!";
   }
   else{
     echo "User Email not found, please try again.";
-  }*/
+  }
   $conn->close();
 
 ?>
