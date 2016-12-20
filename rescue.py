@@ -11,7 +11,7 @@ dogTrivia = dog.replace("-", " ")
 dog = dog.lower()
 dog = dog.replace("-", "")
 link = str1+dog+str2
-#print(link)
+print(link)
 
 part1 = []
 part2 = []
@@ -130,11 +130,8 @@ if final != "":
   #print(final)
 
 if count == 0:
-  #getImage = "select Image FROM Dogs WHERE Name = '" + dogTrivia + "';"
-  print("retrieve image here")
   img = sys.argv[2]
-  #print(img)
-  print str("<img src=" + img + ">")
+  print str("<img src= " + img + ">")
 
 if (len(final) > 0):
   print("<br><br><h2>Dog Statistics</h2>")
