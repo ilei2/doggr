@@ -23,6 +23,7 @@ if ($conn){
     die("Error running query.");
   }
   print("while loop")
+  /*
   while($row = $result->fetch_assoc()){
     $Size = row['Weight'];
     $Child = row['Child'];
@@ -94,7 +95,7 @@ if ($conn){
       $data .=  "<br><br>";
     }
     break;
-  }
+  }*/
   $conn->close();
 }
 
