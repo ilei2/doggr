@@ -36,17 +36,17 @@ if ($conn)
   $check = "SELECT * FROM `User` WHERE `Email` = '{$Email};'";
   echo "Check query: " . $check;
   $conn->query($check);
-  /*if (!result = $conn->query($query)){
+  if (!result = $conn->query($query)){
     die("Error running query.")
   }
-  if($result->num_rows > 0){*/
-  $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
-  echo "Update query: " . $up;  
-  echo "Added!";
-  /*}
+  if($result->num_rows > 0){
+    $up = "UPDATE `User` SET `ID1`= '{$one}', `ID2` = '{$two}', `ID3` = '{$three}' WHERE `Email` = '{$Email}';";
+    echo "Update query: " . $up;  
+    echo "Added!";
+  }
   else{
     echo "User Email not found, please try again.";
-  }*/
+  }
   $conn->close();
 
 ?>
