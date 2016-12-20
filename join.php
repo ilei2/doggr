@@ -16,13 +16,13 @@ if (!$conn){
 echo "<html><body>";
 echo "<link rel='stylesheet' type='text/css' href='summary.css'>";
 
-if ($conn){
-  echo "do join here"; 
+if ($conn){ 
   $user = "SELECT * FROM User WHERE Email = '{$Email}';";
   echo $user;
   if(!$result = $conn->query($user)){
     die("Error running query.");
   }
+  print("while loop")
   while($row = $result->fetch_assoc()){
     $Size = row['Weight'];
     $Child = row['Child'];
@@ -75,6 +75,7 @@ if ($conn){
     }
     $q = "SELECT * FROM Dogs WHERE Male_weight >= {$D1} AND Male_weight <= {$D2} AND Child >= {$Child} AND Exercise <= {$Exercise} AND Adapt >= {$Adapt} AND Apt >= {$Apt} AND Grooming <= {$Groom}";
     $q .= " ORDER BY Child DESC, Exercise DESC, Adapt DESC, Apt DESC, Grooming DESC;";
+    echo $q;
     $result = $conn->query($q);
     $count = 0;
     $data = "";
