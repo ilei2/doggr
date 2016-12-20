@@ -19,11 +19,9 @@ echo "<link rel='stylesheet' type='text/css' href='summary.css'>";
 if ($conn){ 
   $user = "SELECT * FROM User WHERE Email = '{$Email}';";
   echo $user;
-  /*if(!$result = $conn->query($user)){
+  if(!$result = $conn->query($user)){
     die("Error running query.");
-  }*/
-  //print("while loop")
-  /*
+  }
   while($row = $result->fetch_assoc()){
     $Size = row['Weight'];
     $Child = row['Child'];
@@ -33,6 +31,9 @@ if ($conn){
     $Groom = row['Groom'];
     $D1 = '0';
     $D2 = '0';
+    echo $Size;
+    break;
+  }/*
     if ($Size == "Small"){
       $D1 = '0';
       $D2 = '20';
