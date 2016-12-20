@@ -133,13 +133,8 @@ if count == 0:
   #getImage = "select Image FROM Dogs WHERE Name = '" + dogTrivia + "';"
   print("retrieve image here")
   img = sys.argv[2]
-  print(img)
-  #QUERY IMAGE FROM DATABASE HERE
-  
-
-
-
-
+  #print(img)
+  print str("<img src=" + img + ">")
 
 if (len(final) > 0):
   print("<br><br><h2>Dog Statistics</h2>")
