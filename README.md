@@ -1,5 +1,5 @@
 #Doggr
-Doggr is a CS411 Group Project with the following members:
+Doggr is a CS411 Group Project created by the following members:
 
 Ash K., Jasmine K., Ivy L., Kirsten W.
 
