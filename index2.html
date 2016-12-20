@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    left: 35px;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 8px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+</head>
+<body>
+<center>
+<form action="connect.php" method="post">
+<div id="preferences">Update Preferences</div>
+<h3>Find Dogs</h3>
+<p>
+Email: <input type="text" name="Email" value="Email"><br>
+<!--Name: <input type="text" name="Name" value="Name">-->
+<!--<input list="Kinds" name="Kinds" value="Kinds">-->
+<!--  
+Kind: <select id="Kinds" name="Kinds" value="Kinds">
+    <option value="Kinds" selected>Kinds</option>
+    <option value="Companion">Companion</option>
+    <option value="Guardian">Guardian</option>
+    <option value="Scenthound">Scenthound</option>
+    <option value="Terrier">Terrier</option>
+    <option value="Herding">Herding</option>
+    <option value="Gun">Gun</option>
+    <option value="Northern">Northern</option>
+  </select>
+<!--  <datalist id="Kinds">
+<!--
+    <option value="Companion">
+    <option value="Guardian">
+    <option value="Scenthound">
+    <option value="Terrier">
+    <option value="Herding">
+    <option value="Gun">
+    <option value="Northern">
+  </datalist>-->
+<!--
+Color: <input list="Colors" name="Colors" value="Colors">
+  <datalist id="Colors">
+    <option value="Black">
+    <option value="Tan">
+    <option value="White">
+    <option value="Brown">
+    <option value="Gray">
+  </datalist>
+Coat: <input type="text" name="Coat" value="Coat">
+Age: <input type="text" name="Age" value="Age">
+-->
+ <div class="dropdown"><span>Child Friendly: </span>
+ <div class="dropdown-content">
+1: Less comfortable around children<br>5: Comfortable with children
+ </div> </div>
+ <input type="range" name="Child" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Exercise Needs: </span>
+ <div class="dropdown-content">
+1: Does not need regular exercise<br>5: Needs regular exercise
+ </div></div>
+ <input type="range" name="Exercise" min="1" max="5" value="5"><br>
+
+ <div class="dropdown"><span>Adaptability: </span>
+ <div class="dropdown-content">
+1: Does not easily adjust to new environments<br>5: Easily adjusts to new environments
+ </div></div>
+ <input type="range" name="Adaptability" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Apartment Friendly: </span>
+ <div class="dropdown-content">
+1: Not well suited for an apartment<br>5: Well suited for an apartment
+ </div></div> <input type="range" name="Apt" min="1" max="5" value="1"><br>
+
+ <div class="dropdown"><span>Grooming Needs: </span>
+ <div class="dropdown-content">
+1: Does not need grooming often<br>5: Needs grooming often
+ </div></div>
+ <input type="range" name="Grooming" min="1" max="5" value="5"><br>
+ Size:<select id="Weight" name="Weight" value="Weight">
+    <option value="Size" selected>Size</option>
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+  </select><br>
+ Filter By: <select id="filter" name="filter" value="All">
+    <option value="All" selected>All</option>
+    <option value="Child">Child Friendliness</option>
+    <option value="Exercise">Exercise Needs</option>
+    <option value="Adapt">Adaptability</option>
+    <option value="Apt">Apt Friendliness</option>
+    <option value="Groom">Grooming Needs</option>
+  </select><br>
+
+<!--
+ Weight: <input type="range" name="Weight" min="0" max="250" value="250">
+ <!Male <input type="radio" name="gender" value="male">
+ <!Female <input type="radio" name="gender" value="female">
+<br>
+-->
+<input type="submit" name="Wiki" value="Wiki">
+</form>
+</center>
+
+</p>
+
+<center>
+<form action="rescue.php" method="post">
+<h3>Lookup Dogs</h3>
+<input type="text" name="Name" value="Name">
+<input type="submit" name="Expanded Dog Info" value="Expanded Dog Info">
+</form>
+</center>
+
+<center>
+<form action="action_page2.php" method="post">
+<h3>Adopt Dogs</h3>
+<input type="text" name="Name" value="Name">
+Enter City:<input type="text" name="City" value="Champaign">
+<input type="submit" name="Expanded Dog Info" value="Search Shelters">
+</form>
+</center>
+<center>
+<form action="join.php" method="post">
+ <h3>Look at your preferences</h3>
+ <input type="text" name="Email" value="Email">
+ <input type="submit" name="Old" value="User Preferences">
+</form>
+</center>
+</body>
+</html>
