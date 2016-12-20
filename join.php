@@ -15,6 +15,8 @@ if (!$conn){
 
 echo "<html><body>";
 echo "<link rel='stylesheet' type='text/css' href='summary.css'>";
+echo "<body bgcolor=\"#EDE1D1\">";
+
 
 if ($conn){ 
   $user = "SELECT * FROM User WHERE Email = '{$Email}';";
@@ -29,6 +31,9 @@ if ($conn){
   $Adapt = $row['Adapt'];
   $Apt = $row['Apt'];
   $Groom = $row['Groom'];
+  $ID1 = $row['ID1'];
+  $ID2 = $row['ID2'];
+  $ID3 = $row['ID3'];  
   $D1 = '0';
   $D2 = '0';
   
@@ -78,7 +83,17 @@ if ($conn){
   //echo $q;
   $result = $conn->query($q);
   $count = 0;
-  $data = "";
+  $data = "<center><h2>Your Favorited Ids:</h2></center>";
+  if ($ID1 != "" and $ID1 != "0"){
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id1+'"/></form></center>';
+  }
+  if ($ID2 != "" and $ID2 != "0"){
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id2+'"/></form></center>';
+  }
+  if ($ID3 != "" and $ID3 != "0"){
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id3+'"/></form></center>';
+  }
+
   while($row = $result->fetch_assoc()){
     $data .= "<center><h2>" . (string) ++$count . "</h2><br></center>";
     $data .= '<center><form action="rescue.php" method="POST">Breed Info: <input type="submit" name="Name" value="' . $row['Name'] . '"/></form></center><center><form action="action_page2.php" method="POST">Adopt? <input type="text" name="City" value="Enter City"><input type="submit" name="Name" value="'. $row['Name'] . '"/></form></center>';
