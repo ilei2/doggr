@@ -8,17 +8,26 @@ $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
 
+$name = $_POST["Name"];
+
 $conn = mysqli_connect($hostname, $username, $password, $database);
 if (!$conn){
   die("Connection failed: " . mysqli_connect_error());
   }
 
+if ($conn){
+  $getImage = "select Image FROM Dogs WHERE Name = '" . {$name} . "';"
+  $image = $conn->query($getImage);
+  echo $image;
+  $conn->close();
+}
 
-$name = $_POST["Name"];
+
+//$name = $_POST["Name"];
 $Pname = str_replace(" ", "-", $name);
 
 if ($conn)
-  $string .= shell_exec("python rescue.py {$Pname}");
+  $string .= shell_exec("python rescue.py {$Pname} {$image}");
   $string .= "</body></html>";
 ?>
 

@@ -2,9 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 from sys import stdin
-#from PIL import Image
-#import Image
-
 
 print "<body bgcolor=\"#EDE1D1\">"
 str1 = "http://"
@@ -109,8 +106,8 @@ print(part4)
 final = ""
 #print(part4)
 #print(part6)
-
-for i in range(12):
+if (len(part6) > 0):
+  for i in range(12):
 	if(part6[i] == "1"):
 		final = final + str(part4[i]) +  "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/2000px-1_stars.svg.png\" style=\"width:100px;height:30px;\">" + "<br>"
 	if(part6[i] == "2"):
@@ -122,19 +119,33 @@ for i in range(12):
 	if(part6[i] == "5"):
 		final = final + str(part4[i]) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/2000px-5_stars.svg.png\" style=\"width:100px;height:30px;\">" + "<br>"
 
+count = 0
 if final != "":
   for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
     for g in e.find_all("img"):
+      count += 1
       dog_image = g["src"]
       print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
+  #print("<br><br><h2>Dog Statistics</h2>")
+  #print(final)
+
+if count == 0:
+  #getImage = "select Image FROM Dogs WHERE Name = '" + dogTrivia + "';"
+  print("retrieve image here")
+  #QUERY IMAGE FROM DATABASE HERE
+  
+
+
+
+
+
+if (len(final) > 0):
   print("<br><br><h2>Dog Statistics</h2>")
   print(final)
-
 print "<br>"
 
-"""
-for e in soup.find_all("div", {"class" : "pw-main-content-image"}):
-  for g in e.find_all("img"):
-    dog_image = g["src"]
-print str("<img src=" + "http://www.petwave.com" + dog_image + ">")
-"""
+
+
+
+
+
