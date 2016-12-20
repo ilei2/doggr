@@ -96,11 +96,16 @@ if ($conn){
     }
     break;
   }*/
-  $conn->close();
+  //$conn->close();
 }
 
-echo $data;
-echo "</body></html>";
+//echo $data;
+//echo "</body></html>";
+
+
+
+
+
 //$data = "<html><body>";
 //$data .= "<link rel='stylesheet' type='text/css' href='summary.css'>";
 #echo $data;
