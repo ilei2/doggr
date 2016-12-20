@@ -85,13 +85,13 @@ if ($conn){
   $count = 0;
   $data = "<center><h2>Your Favorited Ids:</h2></center>";
   if ($ID1 != "" and $ID1 != "0"){
-    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id1+'"/></form></center>';
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="' . $ID1 . '"/></form></center>';
   }
   if ($ID2 != "" and $ID2 != "0"){
-    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id2+'"/></form></center>';
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="' . $ID2 . '"/></form></center>';
   }
   if ($ID3 != "" and $ID3 != "0"){
-    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="'+id3+'"/></form></center>';
+    $data .= '<center><form action="id.php" method="POST"><input type="submit" name="Name" value="' . $ID3 . '"/></form></center>';
   }
 
   while($row = $result->fetch_assoc()){
